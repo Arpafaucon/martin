@@ -17,13 +17,15 @@ while (!feof(F))
     if (token != NULL)
     {
         printf("enter the translation of %s : ",token);
-        scanf("%s",&a);
+        scanf("%s",a);
     }
     while (token != NULL)
         {
+	//la à partir de la ligne suivante ton token peut etre NULL à nouveau...
         token = strtok (NULL, s);
+	// ce qui fait planter ton programme quand il essaie d'afficher une chaine NULL
         printf("%s\n",token);
-        printf("%d",a);
+        printf("%s",a); //
         printf("%d",strcmp(a,token));
         if(strcmp(token,a)==0)        //||strcmp(info,"name")==0
            {
@@ -36,6 +38,7 @@ while (!feof(F))
                 printf("False! Maybe another day!");
             }
         }
+
     }
 fclose(F);
 }
