@@ -3,17 +3,17 @@
 void attendre(float temps);
 int main(void)
 {
-int compteur;
-for (compteur=10;compteur>0;compteur--)
-    {
-    printf("%d...\n",compteur--);
-    attendre(1);
-    }
-puts("bonnne annee!\n");
-return 0;
+	int compteur;
+	for (compteur=10;compteur>0;compteur--)
+	{
+		printf("%d...\n",compteur);//on decremente pas deux fois !
+		attendre(1);
+	}
+	puts("bonnne annee!\n");
+	return 0;
 }
 void attendre(float temps)
 {
-clock_t arrivee()=clock()+(temps*CLOCKS_PER_SEC);//on calcule le temps où l'horloge s'arrêtera
-while (clock()<arrivee);
+	clock_t arrivee = clock()+(temps*CLOCKS_PER_SEC);//on calcule le temps où l'horloge s'arrêtera
+	while (clock()<arrivee);
 }
