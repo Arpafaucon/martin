@@ -1,0 +1,3 @@
+hello-bonjour
+dog-chien
+hot-chaud
